@@ -9,14 +9,61 @@ import { NavLink } from 'react-router-dom';
 
 const Skills = () => {
    
-    const [mySkills,setmySkills] = useState([]);
-    useEffect(()=>{
-        fetch('../../../public/skills.json')
-        .then(res=>res.json())
-        .then(data=>{
-           setmySkills(data);
-        })
-    },[]);
+    const mySkills = [
+        {
+          name: "JavaScript",
+          description: "High-level programming language for creating dynamic and interactive content on web pages.",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png"
+        },
+        {
+          name: "React",
+          description: "JavaScript library for building user interfaces.",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
+        },
+        {
+          name: "tailwindcss",
+          description: "A utility-first CSS framework for rapidly building custom user interfaces",
+          image: "https://res.cloudinary.com/dmc0prejr/image/upload/v1741100475/rpkjtgubawebckup2lsh.png"
+        },
+        {
+          name: "Node.js",
+          description: "JavaScript runtime environment for building server-side and networking applications.",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/512px-Node.js_logo.svg.png"
+        },
+        {
+          name: "Express.js",
+          description: "Backend framework for Node.js.",
+          image: "https://iotbyhvm.ooo/wp-content/uploads/2019/01/expressjs-800x445.png"
+        },
+        {
+          name: "MongoDB",
+          description: "NoSQL database program.",
+          image: "https://webassets.mongodb.com/_com_assets/cms/mongodb_logo1-76twgcu2dm.png"
+        },
+        {
+          name: "MySQL",
+          description: "Open-source relational database management system.",
+          image: "https://res.cloudinary.com/dmc0prejr/image/upload/v1741088359/bvjzbye3ct9jd63zp8u9.png"
+        },
+        {
+          name: "POSTMAN",
+          description: "Single platform for collaborative API development.",
+          image: "https://res.cloudinary.com/dmc0prejr/image/upload/v1741088262/huxbut8xbq4jesm7znc7.png"
+        },
+        {
+          name: "Version Control (Git)",
+          description: "Distributed version control system for tracking changes in source code.",
+          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/512px-Git-logo.svg.png"
+        },
+        {
+          name: "Docker",
+          description: "Build, test, and deploy applications quickly using containers",
+          image: "https://res.cloudinary.com/dmc0prejr/image/upload/v1741164579/umfibhzbjyxnlfzzrqg4.jpg"
+        }
+      ];
+      
+    //   console.log(mySkills);
+      
 
     // console.log(mySkills[0]);
 
