@@ -22,6 +22,9 @@ const Left = () => {
         else if(path_name == '/resume'){
             setColor('#54b689');
         }
+        else if(path_name == '/blog'){
+            setColor('#F07857');
+        }
         else{
             setColor('#288BA8');
         }

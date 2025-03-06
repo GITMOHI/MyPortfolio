@@ -60,14 +60,29 @@ const Main = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to toggle drawer
   const location = useLocation();
 
-  useEffect(() => {
-    const path_name = location.pathname;
-    if (path_name === "/aboutme" || path_name === "/") {
-      setColor("#5BC3D5");
-    } else if (path_name === "/portfolio") {
-      setColor("#EEA73B");
-    }
-  }, [location]); // Re-run effect when location changes
+
+
+    useEffect(() => {
+     
+        console.log('location: -->>', location);
+        const path_name = location.pathname;
+        if(path_name == '/aboutme' || path_name == '/'){
+            setColor('#5BC3D5');
+        }
+        else if(path_name == '/portfolio'){
+            setColor('#EEA73B');
+        }
+        else if(path_name == '/resume'){
+            setColor('#54b689');
+        }
+        else if(path_name == '/blog'){
+          setColor('#F07857');
+        }
+        else{
+            setColor('#288BA8');
+        }
+        
+    }, [location]); // Re-run effect when location changes; // Re-run effect when location changes
 
   return (
     <div className="flex flex-col lg:flex-row gap-2">
@@ -99,7 +114,7 @@ const Main = () => {
       {/* Drawer Component */}
       {isDrawerOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={() => setIsDrawerOpen(false)}>
-          <div className="fixed top-0 left-0 h-full w-3/4 bg-white shadow-lg p-5" onClick={(e) => e.stopPropagation()}>
+          <div style={{ backgroundColor: color }} className={`fixed top-0 left-0 h-full w-3/4 bg-[${color}] shadow-lg p-5`} onClick={(e) => e.stopPropagation()}>
             <button
               className="btn btn-square btn-ghost text-black mb-4"
               onClick={() => setIsDrawerOpen(false)}
