@@ -53,7 +53,7 @@ const Resume = () => {
             <div className="flex flex-row justify-between gap-0 mt-10 items-center">
               <div>
                 <img
-                  src="../../../public/images/rsm1.jpeg"
+                  src="https://res.cloudinary.com/dmc0prejr/image/upload/v1741256924/owymyngusw7qlrnnisc9.jpg"
                   
                   className="w-32 h-32 rounded-full"
                   alt="Profile"

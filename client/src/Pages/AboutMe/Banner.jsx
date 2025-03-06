@@ -28,7 +28,7 @@ const Banner = () => {
 
                     <div className='px-8'>
 
-                        <img src="../../../public/images/bn2.jpeg" className=' h-96 w-60  lg:py-10' alt="" />
+                        <img src="https://res.cloudinary.com/dmc0prejr/image/upload/v1741256924/yfugdilailmfcup3x3xu.jpg" className=' h-96 w-60  lg:py-10' alt="" />
                         
                     </div>
                     

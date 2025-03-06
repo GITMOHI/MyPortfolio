@@ -5,12 +5,41 @@ import { FaArrowRight, FaGithub } from 'react-icons/fa6';
 
 const FeaturedProjects = () => {
 
-    const [featProj,setfetProj]=useState([]);
-    useEffect(()=>{
-        fetch('../../../public/FeatProjects.json')
-        .then(res=>res.json())
-        .then(data=>setfetProj(data));
-    },[]);
+    const featProj = [
+        {
+          id: 2,
+          image_link: "https://res.cloudinary.com/dmc0prejr/image/upload/v1741105076/ruuoli8xlcol4r4kimq3.png",
+          github_link: "https://github.com/GITMOHI/EcommerceProject",
+          project_heading: "shopZen",
+          description: "shopZen is a Fullstack e-commerce project, provides all features of an e-commerce site and admin panel to control",
+          genre: "Web App",
+        },
+        {
+          id: 1,
+          image_link: "https://res.cloudinary.com/dmc0prejr/image/upload/v1741105077/n85g4vhcjt7wyqnuiud0.png",
+          github_link: "https://github.com/GITMOHI/NewzApp",
+          project_heading: "NewzApp",
+          description: "NewzApp is a Fullstack news application, provides all features of a news site and admin panel to control",
+          genre: "Web App",
+        },
+        {
+          id: 3,
+          image_link: "https://res.cloudinary.com/dmc0prejr/image/upload/v1741105076/ir7i0yo50eilnzp4r3mk.png",
+          github_link: "https://github.com/GITMOHI/Mbook",
+          project_heading: "Mbook",
+          description: "Mbook is a social media application, provides all features of a social media site and admin panel to control",
+          genre: "Web App",
+        },
+        {
+          id: 4,
+          image_link: "https://res.cloudinary.com/dmc0prejr/image/upload/v1741105076/h74piaybtssup6fr5zpk.png",
+          github_link: "https://github.com/GITMOHI/Textz",
+          project_heading: "Textz",
+          description: "Textz is a real-time chatting application, provides one-to-one encrypted chat and group chat options",
+          genre: "Web App",
+        },
+      ];
+      
 
     return (
 

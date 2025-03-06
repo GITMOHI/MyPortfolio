@@ -3,7 +3,7 @@ import React from 'react';
 const Skill = ({s}) => {
     // const {name,description,image}=s;
     // console.log(name,description,image);
-    console.log(s);
+    // console.log(s);
     
     return (
         <div className='space-y-3'>

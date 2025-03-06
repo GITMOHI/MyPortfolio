@@ -18,7 +18,7 @@ const Skills = () => {
         })
     },[]);
 
-    console.log(mySkills[0]);
+    // console.log(mySkills[0]);
 
 
     return (

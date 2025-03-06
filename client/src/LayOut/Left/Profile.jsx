@@ -10,7 +10,7 @@ const Profile = ({ color }) => {
         <h3 className="text-2xl font-bold">Mohi</h3>
         <div className="avatar">
           <div className="w-32 rounded-full">
-            <img src="../../../public/images/bw.jpg" />
+            <img src="https://res.cloudinary.com/dmc0prejr/image/upload/v1741256932/kk0tfmc5obym59uaasyh.jpg" />
           </div>
         </div>
         <p className="text-center">

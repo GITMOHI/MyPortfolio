@@ -6,11 +6,34 @@ import { FaArrowRight } from 'react-icons/fa6';
 const Blogs = () => {
 
     const [blogs,setblogs]=useState([]);
-    useEffect(()=>{
-        fetch('../../../public/blog.json')
-        .then(res=>res.json())
-        .then(data=>setblogs(data))
-    },[]);
+  const apiUrl = import.meta.env.VITE_API_URL;
+
+
+
+  useEffect(() => {
+    const getBlogs = async () => {
+      try {
+        const response = await fetch(`${apiUrl}/api/blogs`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+  
+        if (!response.ok) {
+          throw new Error("Failed to send contact");
+        }
+  
+        const data = await response.json();
+        setblogs(data);
+        console.log("Response:", data);
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+  
+    getBlogs();
+  }, []); 
 
 
     return (
