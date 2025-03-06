@@ -85,7 +85,7 @@ const Main = () => {
     }, [location]); // Re-run effect when location changes; // Re-run effect when location changes
 
   return (
-    <div className="flex flex-col lg:flex-row gap-2">
+    <div className="flex flex-col lg:flex-row gap-2 bg-white text-black">
       {/* Mobile Navbar with Drawer */}
       <div style={{ backgroundColor: color }} className="block lg:hidden">
         <div className="navbar px-4 py-2 flex justify-between items-center">

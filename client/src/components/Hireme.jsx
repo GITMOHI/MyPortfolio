@@ -33,6 +33,7 @@ const HireMe = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
   
     if (!formData.name || !formData.email || !formData.message) {
       toast.error('Please fill in all required fields');
@@ -65,8 +66,10 @@ const HireMe = () => {
       console.error('Submission error:', error);
       toast.error('An error occurred. Please try again later.');
     }
+    setIsLoading(false);
   };
-  
+   
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12 mx-auto ">
@@ -90,7 +93,7 @@ const HireMe = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your Name"
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681]"
+                className="bg-white w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681]"
                 required
               />
             </div>
@@ -103,7 +106,7 @@ const HireMe = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Your Email"
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681]"
+                className="bg-white w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681]"
                 required
               />
             </div>
@@ -118,7 +121,7 @@ const HireMe = () => {
                 value={formData.company}
                 onChange={handleChange}
                 placeholder="Company (Optional)"
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681]"
+                className="w-full bg-white pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681]"
               />
             </div>
 
@@ -128,7 +131,7 @@ const HireMe = () => {
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681] text-gray-600"
+                className="w-full bg-white pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681] text-gray-600"
               >
                 <option value="">Select Project Type</option>
                 <option value="web-development">Web Development</option>
@@ -148,7 +151,7 @@ const HireMe = () => {
               onChange={handleChange}
               placeholder="Describe your project requirements, goals, and any specific details"
               rows="5"
-              className="w-full pl-10 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681]"
+              className="w-full bg-white pl-10 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681]"
               required
             ></textarea>
           </div>
@@ -158,7 +161,7 @@ const HireMe = () => {
               name="budget"
               value={formData.budget}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681] text-gray-600"
+              className="w-full bg-white px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#377681] text-gray-600"
             >
               <option value="">Estimated Project Budget</option>
               <option value="0-1000">$0 - $1,000</option>
@@ -170,10 +173,11 @@ const HireMe = () => {
           </div>
 
           <button 
+            disabled={isLoading}
             type="submit" 
             className="w-full btn bg-[#377681] hover:bg-[#2c5c6b] text-white font-bold py-3 rounded-lg transition duration-300 flex items-center justify-center gap-3 text-lg"
           >
-            <FaPaperPlane className="text-xl" /> Send Project Inquiry
+            <FaPaperPlane className="text-xl" /> {isLoading?"Sending":"Send Project Inquiry"}
           </button>
         </form>
 

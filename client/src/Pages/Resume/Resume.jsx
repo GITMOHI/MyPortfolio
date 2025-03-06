@@ -26,7 +26,7 @@ const Resume = () => {
       </div>
 
       <div  >
-        <div className="card w-[90%] h-full mx-auto mt-24 bg-base-100 shadow-2xl mb-28">
+        <div className="card w-[90%] h-full mx-auto mt-24 bg-white text-black shadow-2xl mb-28 ">
           <div className="m-12">
             {/* Banner */}
             <div className="flex flex-row justify-between">
