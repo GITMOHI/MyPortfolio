@@ -29,6 +29,7 @@ const HireMe = () => {
   };
 
 
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +40,7 @@ const HireMe = () => {
     }
   
     try {
-      const response = await fetch('http://localhost:5000/api/send-email', {
+      const response = await fetch(`${apiUrl}/api/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
